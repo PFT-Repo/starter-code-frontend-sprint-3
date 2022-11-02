@@ -70,18 +70,20 @@ var cartList = [];
 var cart = [];
 
 var total = 0;
+var o= 0
 
 // Exercise 1
 function buy(id) {
     var i;
+    o++;
     for (let index = 0; index < products.length; index++) {
         if(id == products[index].id){
             i = index;
         }
-        
     }
+    const itemsadded = document.getElementById("count_product");
+    itemsadded.innerText = o;
     cartList.push(products[i]);
-   console.log(cartList);
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
 }
@@ -91,6 +93,9 @@ function cleanCart() {
   
   cartList = [];
   cart=[];
+  o=0;
+  const itemsadded = document.getElementById("count_product");
+  itemsadded.innerText = o;
   const table = document.getElementById('cart_list');
   table.innerHTML = "Add something to cart";
   const t_price = document.getElementById('total_price');
